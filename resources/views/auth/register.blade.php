@@ -41,7 +41,11 @@
                                 @enderror
 
                                 <input type="tel" class="form-control w-75 mx-auto mb-3" name="phone_number" placeholder="Phone number">
-
+                                @error('phone_number')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <input type="password" class="form-control w-75 mx-auto mb-3 @error('password') is-invalid @enderror" required autocomplete="new-password" name="password" placeholder="Password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
