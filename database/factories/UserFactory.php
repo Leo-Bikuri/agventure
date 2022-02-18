@@ -1,42 +1,32 @@
 <?php
 
-namespace Database\Factories;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
-
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
-class UserFactory extends Factory
+return new class extends Migration
 {
     /**
-     * Define the model's default state.
+     * Run the migrations.
      *
-     * @return array<string, mixed>
+     * @return void
      */
-    public function definition()
+    public function up()
     {
-        return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'phone_number' => $this->faker->unique()->numerify('07########'),
-            'password' => Hash::make('12345678'), // password
-        ];
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Reverse the migrations.
      *
-     * @return static
+     * @return void
      */
-    public function unverified()
+    public function down()
     {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
+        Schema::dropIfExists('password_resets');
     }
-}
+};
