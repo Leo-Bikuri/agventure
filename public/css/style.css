@@ -1,0 +1,11 @@
+img{
+    object-fit:cover!important;
+}
+#home .carousel-inner img{
+    height: 100vh;
+}
+#home .carousel-caption{
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
