@@ -7,4 +7,4 @@
         </div>
     </div>
 </div>
-<hr class="mx-5" style="opacity:1; background-color: #1e212b;">
+<hr class="mx-5 title" style="opacity:1; background-color: #1e212b;">
