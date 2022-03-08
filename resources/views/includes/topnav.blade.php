@@ -1,4 +1,4 @@
-<div class="container-fluid title">
+<div class="container-fluid title pt-2">
     <div class="row mx-5">
         <div class="col-12 my-auto">
             <div class="text-center">
