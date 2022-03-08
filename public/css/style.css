@@ -9,3 +9,21 @@ img{
     left:50%;
     transform: translate(-50%, -50%);
 }
+.navbar-logo{
+    display: none;
+}
+.nav-active{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: #fe192f;
+}
+
+@media(max-width: 450px){
+    .title{
+        display: none;
+    }
+    .navbar-logo{
+        display: inline;
+    }
+}
